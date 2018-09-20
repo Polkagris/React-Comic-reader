@@ -29,7 +29,7 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        <Defaultimage/>
+
         <button onClick={this.handleClick}>Click Me</button>
         <h1>{this.state.name}</h1>
         <button onClick={this.nextImage}>Click For Next Image</button>

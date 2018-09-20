@@ -75,9 +75,13 @@ body{
   font-size: 30px;
   cursor: pointer;
 }
+.navigation{
+  margin:auto;
+  padding: 10px;
+}
 #thumbnails{
   grid-column: 2/4;
-  grid-row: 7/8;
+  grid-row: 9/10;
   margin-top: 20px;
   cursor: pointer;
   display: grid;

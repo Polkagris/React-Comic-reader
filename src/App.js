@@ -5,11 +5,12 @@ import Thumbnails from '../src/Components-stateless/Thumbnails.js';
 import MyComponent from './Mycomp.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
-import { faCoffee  } from '@fortawesome/free-solid-svg-icons'
+import { faStroopwafel, faAddressBook } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight  } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faStroopwafel)
-library.add(faCoffee)
+
+library.add(faStroopwafel, faAddressBook)
+library.add(faAngleRight)
 
 
 // Component with state - navigation between images
@@ -23,6 +24,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <h1 id="title">Comic Reader</h1>
+          <Defaultimage/>
           <MyComponent/>
 
         </div>
