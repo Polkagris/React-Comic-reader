@@ -34,8 +34,10 @@ class Defaultimage extends React.Component{
     this.nextImage = this.nextImage.bind(this);
     this.clickedThumbnail = this.clickedThumbnail.bind(this);
     this.LeftArrow = this.LeftArrow.bind(this);
+    this.doubleLeftArrow = this.doubleLeftArrow.bind(this);
+    this.doubleRightArrow = this.doubleRightArrow.bind(this);
   }
-  // Change default image onClick
+  // Function: Change default image onClick
   nextImage(){
     if(this.state.childUrl == 'https://images.unsplash.com/photo-1519498955853-621f66b86038?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c061931e7820a66c483fc8f6a6778bbe&auto=format&fit=crop&w=1352&q=80'){
       this.setState({
@@ -63,7 +65,7 @@ class Defaultimage extends React.Component{
       });
     }
   }
-
+  // Function: thumbnail onClick
   clickedThumbnail(selectedThumbnail){
     this.setState({
       childUrl: selectedThumbnail.target.src
@@ -98,6 +100,19 @@ class Defaultimage extends React.Component{
     });
   }
 }
+  // Function: Set default image to first image
+  doubleLeftArrow(){
+    this.setState({
+      childUrl: 'https://images.unsplash.com/photo-1519498955853-621f66b86038?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c061931e7820a66c483fc8f6a6778bbe&auto=format&fit=crop&w=1352&q=80'
+    });
+  }
+
+  // Function: Set default image to last image
+  doubleRightArrow(){
+    this.setState({
+      childUrl: this.state.thumb4
+    });
+  }
 
   render(){
     let defaultImage = ['https://images.unsplash.com/photo-1519498955853-621f66b86038?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c061931e7820a66c483fc8f6a6778bbe&auto=format&fit=crop&w=1352&q=80',
@@ -113,13 +128,16 @@ class Defaultimage extends React.Component{
         <img id="defaultImage" className="col-lg" src={this.state.childUrl} onClick={this.nextImage}></img>
         </div>
         <div className="row">
-          <DoubleLeftIcon onClick={this.nextImage} />
+          <DoubleLeftIcon onClick={this.doubleLeftArrow} />
           <LeftIcon onClick={this.LeftArrow} />
           <RightIcon onClick={this.nextImage} />
-          <DoubleRightIcon onClick={this.nextImage} />
+          <DoubleRightIcon onClick={this.doubleRightArrow} />
         </div>
         <div>
           <ThumbnailsTest onClick={this.clickedThumbnail} thumbnail={this.state.childUrl}/>
+        </div>
+        <div className="row contact">
+          <GitIcon />
         </div>
       </div>
     );
@@ -139,25 +157,31 @@ class Defaultimage extends React.Component{
 
   let DoubleLeftIcon = ({onClick}) => (
     <div className="navigation">
-        <FontAwesomeIcon icon={Icons.faAngleDoubleLeft}  size="3x" />
+        <FontAwesomeIcon onClick={onClick} icon={Icons.faAngleDoubleLeft}  className="icon" />
     </div>
   );
   let LeftIcon = ({onClick}) => (
     <div className="navigation">
-        <FontAwesomeIcon onClick={onClick} icon={Icons.faAngleLeft} size="3x" />
+        <FontAwesomeIcon onClick={onClick} icon={Icons.faAngleLeft} className="icon" />
     </div>
   );
   let RightIcon = ({onClick}) => (
     <div className="navigation">
-        <FontAwesomeIcon onClick={onClick} icon={Icons.faAngleRight} size="3x" />
+        <FontAwesomeIcon onClick={onClick} icon={Icons.faAngleRight} className="icon" />
     </div>
   );
   let DoubleRightIcon = ({onClick}) => (
     <div className="navigation">
-        <FontAwesomeIcon icon={Icons.faAngleDoubleRight} size="3x" />
+        <FontAwesomeIcon onClick={onClick} icon={Icons.faAngleDoubleRight} className="icon" />
     </div>
   );
 
+  let GitIcon = () => (
+    <div>
+      <FontAwesomeIcon icon={Icons.faUserTie} className="icon" />
+
+    </div>
+  )
 
 
 

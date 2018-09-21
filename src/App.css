@@ -1,6 +1,12 @@
+html, body{
+    background-color: pink;
+    min-height:101%;
+}
+
 body{
   max-width: 900px;
   margin: auto;
+
 }
 /* Grid container */
 #container{
@@ -10,10 +16,15 @@ body{
   font-family: 'Raleway', sans-serif;
   background-color: #999;
 }
+.container{
+    background-color: #999;
+}
 #title{
   grid-column: 1/5;
   grid-row: 1/2;
   text-align: center;
+  padding: 20px;
+  font-size: 50px;
 }
 
   /* navbar  */
@@ -74,6 +85,7 @@ body{
 .icon{
   font-size: 30px;
   cursor: pointer;
+  font-size: 44px;
 }
 .navigation{
   margin:auto;
@@ -84,6 +96,9 @@ body{
   grid-row: 9/10;
   margin-top: 20px;
   cursor: pointer;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(minmax(100px, 100px), auto);
@@ -125,12 +140,8 @@ body{
 }
 
 /* Contact icon */
-#contact{
-  grid-column: 1/5;
-  grid-row: 8/9;
-  justify-self: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+.contact{
+  margin: auto;
 }
 #githubContact:visited{
   text-decoration: none;
